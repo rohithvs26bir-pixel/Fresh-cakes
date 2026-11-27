@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sweet Crumbs – Home Bakery</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #2e2640;
+      background: #fffaf0;
+    }
+    h1, h2, h3, .logo { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; margin: 0; }
+    a { color: inherit; }
+    img { max-width: 100%; }
+
+    /* Every section uses the same centred container so everything lines up */
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header { background: #fffaf0; border-bottom: 1px solid #f0e2c8; position: sticky; top: 0; z-index: 10; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-size: 1.6rem; font-weight: 700; text-decoration: none; }
+    .nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .nav ul a { text-decoration: none; font-weight: 600; }
+    .nav ul a:hover { color: #d9487a; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 999px;
+      background: #d9487a; color: #fff; font-weight: 700; text-decoration: none;
+    }
+    .btn:hover { background: #b93663; }
+    .btn.light { background: #fff; color: #2e2640; border: 2px solid #2e2640; }
+    .btn.light:hover { background: #2e2640; color: #fff; }
+
+    /* Hero */
+    .hero { padding: 72px 0; }
+    .hero .container { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: 3rem; margin-bottom: 16px; }
+    .hero p { margin: 0 0 28px; color: #5b5170; max-width: 46ch; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-card {
+      background: #ffe9a8; border-radius: 28px; min-height: 340px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 32px;
+    }
+    .hero-card .big { font-size: 6rem; line-height: 1; }
+    .hero-card p { margin: 12px 0 0; font-weight: 600; color: #2e2640; }
+
+    /* Sections */
+    section { padding: 64px 0; }
+    .section-head { text-align: center; margin-bottom: 40px; }
+    .section-head h2 { font-size: 2.2rem; margin-bottom: 8px; }
+    .section-head p { margin: 0; color: #5b5170; }
+
+    /* Menu */
+    .menu { background: #fff; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .item {
+      background: #fffaf0; border: 2px solid #f0e2c8; border-radius: 20px;
+      padding: 28px 24px; text-align: center;
+    }
+    .item .emoji { font-size: 3rem; display: block; margin-bottom: 8px; }
+    .item h3 { font-size: 1.25rem; margin-bottom: 6px; }
+    .item p { margin: 0 0 12px; color: #5b5170; font-size: .95rem; }
+    .price { font-weight: 700; color: #d9487a; font-size: 1.15rem; }
+
+    /* Steps */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .step { background: #e9e1fa; border-radius: 20px; padding: 28px 24px; }
+    .step h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .step p { margin: 0; }
+
+    /* Order band */
+    .order { background: #2e2640; color: #fff; text-align: center; }
+    .order h2 { font-size: 2.2rem; margin-bottom: 12px; }
+    .order p { margin: 0 auto 28px; max-width: 50ch; color: #d8d0ec; }
+
+    footer { text-align: center; padding: 28px 24px; color: #5b5170; font-size: .95rem; }
+
+    /* Mobile */
+    @media (max-width: 800px) {
+      .hero .container, .grid, .steps { grid-template-columns: 1fr; }
+      .hero { padding: 40px 0; }
+      .hero h1 { font-size: 2.3rem; }
+      .hero-card { min-height: 240px; }
+      .nav ul { gap: 16px; }
+      .logo { font-size: 1.3rem; }
+    }
+    @media (max-width: 480px) { .nav ul li:nth-child(3) { display: none; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#top">🧁 Sweet Crumbs</a>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#how">How to order</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container">
+        <div>
+          <h1>Fresh cakes and cookies, baked at home.</h1>
+          <p>Made to order with simple ingredients. Pick your treats, send us a message, and we will deliver them fresh.</p>
+          <div class="actions">
+            <a class="btn" href="#order">Order now</a>
+            <a class="btn light" href="#menu">See the menu</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <span class="big">🎂</span>
+          <p>Baked fresh every morning</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our menu</h2>
+          <p>Prices are per item. Custom orders are welcome.</p>
+        </div>
+        <div class="grid">
+          <div class="item"><span class="emoji">🍰</span><h3>Chocolate cake</h3><p>Rich cake with chocolate ganache. 500 g.</p><span class="price">₹650</span></div>
+          <div class="item"><span class="emoji">🧁</span><h3>Vanilla cupcakes</h3><p>Box of 6 with buttercream frosting.</p><span class="price">₹420</span></div>
+          <div class="item"><span class="emoji">🍪</span><h3>Butter cookies</h3><p>Crisp and golden. Box of 12.</p><span class="price">₹300</span></div>
+          <div class="item"><span class="emoji">🍫</span><h3>Brownies</h3><p>Fudgy and soft. Box of 6.</p><span class="price">₹380</span></div>
+          <div class="item"><span class="emoji">🥐</span><h3>Butter croissants</h3><p>Flaky and warm. Pack of 4.</p><span class="price">₹260</span></div>
+          <div class="item"><span class="emoji">🎂</span><h3>Birthday cake</h3><p>Custom flavour and message. 1 kg.</p><span class="price">₹1,200</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>How to order</h2>
+          <p>Three simple steps.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><h3>1. Choose</h3><p>Pick what you like from the menu.</p></div>
+          <div class="step"><h3>2. Message us</h3><p>Send your order and date on WhatsApp.</p></div>
+          <div class="step"><h3>3. Enjoy</h3><p>Pick up or get it delivered fresh.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="order" id="order">
+      <div class="container">
+        <h2>Ready to order?</h2>
+        <p>Send us a message with what you want and when you need it. We reply within a few hours.</p>
+        <a class="btn" href="https://wa.me/910000000000?text=Hi%20Sweet%20Crumbs%2C%20I%20would%20like%20to%20place%20an%20order.">Order on WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Sweet Crumbs. Baked with love.</p>
+  </footer>
+
+</body>
+</html>
